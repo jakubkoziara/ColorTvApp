@@ -1,0 +1,45 @@
+body {
+    background-color: #E9EBEE;
+}
+
+button {
+    margin: 20px;
+}
+
+.content {
+    text-align: center;
+}
+
+.form-control {
+    width: 60%;
+    margin: 50px auto 20px auto;
+}
+
+.list-group {
+    padding: 50px 0 20px 0;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.badge {
+    background-color: #E9EBEE;
+    color: #000;
+}
+@media all and (max-width:1200px) {
+    .form-control {
+        width: 80%;
+    }
+
+    .list-group {
+        width: 80%;
+    }
+}
+@media all and (max-width:767px) {
+    .form-control {
+        width: 100%;
+    }
+
+    .list-group {
+        width: 100%;
+    }
+}

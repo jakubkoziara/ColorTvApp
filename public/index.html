@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="App for ColorTV">
+    <meta name="author" content="Jakub Koziara">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <title>Yahoo! Weather</title>
+
+</head>
+
+<body>
+
+<div class="container" ng-controller="AppCtrl">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="content">
+                <select class="form-control" ng-init="citiesList = cities[0]" ng-model="citiesList"
+                        ng-options="city as city.label for city in cities">
+                </select>
+                <br/>
+                <button type="button" class="btn btn-primary" ng-click='selectCity(citiesList)'>Show conditions in
+                    {{citiesList.label}}
+                </button>
+            </div>
+
+            <ul class="list-group" ng-model="result">
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.condition.date}}</span>
+                    Date:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.location.country}}</span>
+                    Country:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.location.region}}</span>
+                    Region:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.condition.temp}}</span>
+                    Temperature in <span ng-bind>{{result.units.temperature}}</span>:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.condition.text}}</span>
+                    Current conditions:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.item.lat}}</span>
+                    Latitude:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.item.long}}</span>
+                    Longitude:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.atmosphere.humidity}}</span>
+                    Humidity
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.atmosphere.pressure}}</span>
+                    Pressure in <span ng-bind>{{result.units.pressure}}</span>:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.atmosphere.rising}}</span>
+                    Rising:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.atmosphere.visibility}}</span>
+                    Visibility:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.astronomy.sunrise}}</span>
+                    Sunrise:
+                </li>
+                <li class="list-group-item"><span class="badge" ng-bind>{{result.astronomy.sunset}}</span>
+                    Sunset:
+                </li>
+            </ul>
+        </div>
+    </div>
+</div><!-- /.container -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!--custom styles-->
+<link href="css/style.css" type="text/css" rel="stylesheet">
+
+</body>
+</html>
